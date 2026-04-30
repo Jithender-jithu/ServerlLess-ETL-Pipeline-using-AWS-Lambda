@@ -1,0 +1,13 @@
+// EventBridge cron
+{
+  "Name": "etl-pipeline-trigger",
+  "ScheduleExpression": "rate(6 hours)",
+  "State": "ENABLED",
+  "Description": "Triggers ETL extractor Lambda every 6 hours",
+  "Targets": [
+    {
+      "Id": "ExtractorLambdaTarget",
+      "Arn": "arn:aws:lambda:us-east-1:YOUR_ACCOUNT:function:etl-extractor"
+    }
+  ]
+}
